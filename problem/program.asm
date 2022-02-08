@@ -1,6 +1,6 @@
-// COLOCO AQUÍ TU NOMBRE COMPLETO
-// COLOCA AQUÍ TU ID
-// COLOCA AQUÍ TU CORREO ELECTRÓNICO
+// Daniel Hoyos Correa
+// 000407988
+// daniel.hoyos@upb.edu.co
 (START)
     @START
     0;JMP
