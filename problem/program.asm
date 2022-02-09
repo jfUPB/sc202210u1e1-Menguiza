@@ -62,3 +62,20 @@
 	// Salto infinito para dibujar en cada pixel (Se omite la iteracion al llegar al ultimo pixel).
 	@DRAW
 	0;JMP
+(BLACK_SCREEN)
+	@24575
+	D=A
+	@current
+	M=D
+	// Al ingresar input de teclado, comprobar si es C por su codigo.
+	@keyboard
+	A=M
+	D=M
+	@fillvalue
+	M=0
+	@keycodec
+	D=D-M
+	@DRAW
+	D;JEQ
+    @BLACK_SCREEN
+	0;JMP
