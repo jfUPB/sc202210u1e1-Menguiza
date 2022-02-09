@@ -18,3 +18,26 @@
 	D=A
 	@keycodec
 	M=D
+(CHECK_KEYBOARD)
+    @fillvalue
+	D=M
+	@BLACK_SCREEN
+	D;JNE
+	// Guardamos en memoria el ultimo pixel a pintar.
+	@24575
+	D=A
+	@current
+	M=D
+	// Leer si se detecta presion en el teclado, y comprobar por el codigo si es una F; consecuente llenar pantalla.
+	@keyboard
+	A=M
+	D=M
+	@fillvalue
+	M=-1
+	@keycodef
+	D=D-M
+	@DRAW
+	D;JEQ
+	// Si no cumple con la condicion, limpiar pantalla.
+	@fillvalue
+	M=0
