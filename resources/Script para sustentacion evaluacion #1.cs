@@ -6,7 +6,7 @@ For(int i = 24575; i!=0; i--)
 }
 
 // Ciclo iterativo para asignar a cada espacio de memoria, correspondiente a cada pixel, la informacion de color.
-// En este caso negro (asignado por el numero -1).
+// En este caso blanco (asignado por el numero 0).
 For(int i = 24575; i!=0; i--)
 {
     pixel[i] = 0
