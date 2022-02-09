@@ -41,3 +41,24 @@
 	// Si no cumple con la condicion, limpiar pantalla.
 	@fillvalue
 	M=0
+(DRAW)
+	// Hacer el llenado de pixeles dependiendo del valor (0 para blanco y -1 para negro).
+	@fillvalue
+	D=M
+	@current
+	A=M
+	M=D
+	// Revisar si el ultimo pixel pintado es el primero en pantalla (similar a un indice, al llegar a 0).
+	// Saltar a la comprobacion de teclado en caso tal.
+	@current
+	D=M
+	@16384
+	D=D-A
+	@CHECK_KEYBOARD
+	D;JLE
+	// Decrecimiento en el indice del pixel en cuestion.
+	@current
+	M=M-1
+	// Salto infinito para dibujar en cada pixel (Se omite la iteracion al llegar al ultimo pixel).
+	@DRAW
+	0;JMP
