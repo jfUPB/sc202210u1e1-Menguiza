@@ -11,11 +11,11 @@ uint current = 0;
 
 // Funcion leer teclado.
 
-void CheckKeyBoard (sbyte fillValue)
+sbyte CheckKeyBoard (sbyte fillValue)
 {
     if(fillValue != 0)
     {
-        BlackScreen();
+        fillValue = BlackScreen();
     }
     else
     {
@@ -31,13 +31,15 @@ void CheckKeyBoard (sbyte fillValue)
             fillValue = 0;
         }
     }
+
+    return fillValue;
 }
 
 // Ciclo para iterar la revision de teclado.
 
 while(fillValue == 0)
 {
-    CheckKeyBoard();
+    fillValue = CheckKeyBoard(fillValue);
 }
 
 // Ciclo iterativo para asignar a cada espacio de memoria, correspondiente a cada pixel, la informacion de color.
