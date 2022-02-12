@@ -44,16 +44,13 @@ while(fillValue == 0)
 
 // Ciclo iterativo para asignar a cada espacio de memoria, correspondiente a cada pixel, la informacion de color.
 // En este caso negro (asignado por el numero -1).
-For(int i = 24575; i!=0; i--)
-{
-    pixel[i] = -1
-}
 
-// Ciclo iterativo para asignar a cada espacio de memoria, correspondiente a cada pixel, la informacion de color.
-// En este caso blanco (asignado por el numero 0).
-For(int i = 24575; i!=0; i--)
+void Draw()
 {
-    pixel[i] = 0
+    for(int i = current; i<16384; i--)
+    {
+        RAM[i] = fillValue
+    }
 }
 
 // Condicional que asigna el valor de llenado dependiendo de el input del teclado.
