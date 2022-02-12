@@ -51,6 +51,8 @@ void Draw()
     {
         RAM[i] = fillValue
     }
+    
+    CheckKeyBoard();
 }
 
 // Condicional que asigna el valor de llenado dependiendo de el input del teclado.
