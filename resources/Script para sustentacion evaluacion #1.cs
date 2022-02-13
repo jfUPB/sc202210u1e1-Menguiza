@@ -23,7 +23,7 @@ sbyte CheckKeyBoard (sbyte fillValue)
 
         if(RAM[keyboard] == keycodeF)
         {
-            fillValue = -1
+            fillValue = -1;
             Draw();
         }
         else
@@ -51,21 +51,30 @@ void Draw()
     {
         RAM[i] = fillValue
     }
-    
+
     CheckKeyBoard();
 }
 
-// Condicional que asigna el valor de llenado dependiendo de el input del teclado.
-// En caso de ser F, se asigna negro (-1), en caso de ser C, se asigna blanco (0), y en caso de ser otra no hacer nada.
-if(input.GetKey().keycode(F))
+// Funcion leer teclado con pantalla en negro.
+
+sbyte BlackScreen ()
 {
-    valorDeLlenado = -1
+    current = 24575;
+    if(RAM[keyboard] == keycodeC)
+    {
+        fillValue = 0;
+        Draw();
+    }
+    else
+    {
+        fillValue = RAM[current];
+    }
+    return fillValue;
 }
-elseif(input.GetKey().keycode(C))
+
+// Ciclo para iterar la revision de teclado.
+
+while(fillValue == -1)
 {
-    valorDeLlenado = 0;
-}
-else
-{
-    return;
+    fillValue = BlackScreen();
 }
